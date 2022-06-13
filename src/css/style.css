@@ -1,0 +1,347 @@
+:root {
+  --white: #FFFFFF;
+  --light-purple: #A5A6F6;
+  --dark-purple: #7879F1;
+  --grey-lightest: #F9F9F9 ;
+  --grey-light:#C0C0C0;
+  --grey-scroll: #EBEBEB;
+  --grey-med: #A4A4A4;
+  --grey-dark:#676767;
+  --accent-1: #FF906D;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --rounded: 10px;
+  --row-pad: 10px;
+}
+
+:root {
+  --font-primary: 'Roboto' , sans-serif;
+  --font-accent: 'Nunito', sans-serif;
+}
+
+.Font-bold-lrg {
+  color: var(--accent-1);
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: right;
+  letter-spacing: 2px;
+}
+
+.Font-grey-med {
+  color: var(--grey-med);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
+}
+
+.Font-grey-row {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: var(--grey-dark);
+}
+
+.Font-grey-categories {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: var(--grey-light);
+}
+
+.Bold-lt {
+  font-weight: 500;
+}
+
+/* width */
+.Container__patients::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.Container__patients::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #EBEBEB;
+          box-shadow: inset 0 0 5px #EBEBEB;
+}
+
+/* Handle */
+.Container__patients::-webkit-scrollbar-thumb {
+  background: var(--grey-scroll);
+  height: 20px;
+  border-radius: 10px;
+}
+
+.Container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--grey-lightest);
+  border-radius: 30px;
+  -ms-grid-columns: 20vw 80vw;
+      grid-template-columns: 20vw 80vw;
+  -ms-grid-rows: 12vh 65vh 23vh;
+      grid-template-rows: 12vh 65vh 23vh;
+}
+
+.Container__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 0 var(--row-pad);
+}
+
+.Container__units {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  border-right: 3px solid rgba(229, 229, 229, 0.19);
+  background-color: var(--white);
+}
+
+.Container__patients {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.Container__patients table {
+  width: 90%;
+  border-spacing: 0 15px;
+  margin: 0 auto;
+}
+
+.Container__patients tr:not(:first-child) {
+  background-color: var(--white);
+}
+
+.Container__patients th:first-child {
+  padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
+}
+
+.Container__patients td {
+  padding: var(--row-pad) 0;
+}
+
+.Container__patients td:first-child {
+  padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
+}
+
+.Container__lower {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.Container__staff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Container__staff > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+}
+
+.PtTable__categories {
+  background-color: var(--lightblue);
+}
+
+.Logo {
+  width: 50px;
+  height: 50px;
+}
+
+time {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: #A4A4A4;
+}
+
+.Button__refresh {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: var(--light-purple);
+  border-radius: 7px;
+  border: none;
+}
+
+.Button:hover {
+  background-color: var(--dark-purple);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.Button__logout {
+  position: absolute;
+  bottom: 10%;
+}
+
+.Flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Flex__row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.Flex__col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Flex__center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Block {
+  display: block;
+}
+
+.Align__right {
+  text-align: right;
+}
+
+.Align__left {
+  text-align: left;
+}
+
+.Align__center {
+  text-align: center;
+}
+
+.Capitalize {
+  text-transform: capitalize;
+}
+
+.Rounded {
+  border-radius: var(--rounded);
+}
+
+.Hidden {
+  display: none;
+}
+
+tr td:first-of-type {
+  border-top-left-radius: var(--rounded);
+  border-bottom-left-radius: var(--rounded);
+}
+
+tr td:last-of-type {
+  border-top-right-radius: var(--rounded);
+  border-bottom-right-radius: var(--rounded);
+}
+/*# sourceMappingURL=style.css.map */
