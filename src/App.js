@@ -142,13 +142,13 @@ function App() {
     let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-    let dayOfWeek = days[ today.getDay() ];
+    //let dayOfWeek = ;
     let month = months[ today.getMonth() ];
     let dd = String(today.getDate()).padStart(2, '0');
     let yyyy = today.getFullYear();
-    let formattedDate = month + ' ' + dd + ', ' + yyyy;
 
-    setDate({"today":formattedDate , "dayOfWeek" : dayOfWeek});
+
+    setDate({"today": (month + ' ' + dd + ', ' + yyyy) , "dayOfWeek" : (days[today.getDay()])});
   }
   
   const getTimestamp = () => {
