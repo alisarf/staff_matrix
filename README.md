@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Acuity Dependent Staffing Matrix 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application for hospitals to configure Q4 staffing needs based on individual patient acuity. The purpose of this app is to increase safety and employee burn out that is a result of incorrect staffing ratios. As it stands, hospitals staff their units based on patient census, the number of patients, rather than the acuity of each individual patient. An acuity score measures several factors that may or may not make a patient more difficult such as if your patient were intubated. In a perfect world, our progressing patients transfer up to a higher level of care where they can be provided more 1:1 care, however, that usually is bottlenecked for hours until a bed is open. This has become more common today as COVID has maxed ICU capacities. By factoring acuity into the staffing matrix we are able to produce more accurate staffing needs. Moreover, this tool has the potential to reduce costs within the hospital as staffing can feel more confident sending employees home on callback pay when the acuity is low.
 
-## Available Scripts
+live: N/A
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [API's](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+TBD upon completion. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+Dashboard Preview:
+![](./assets/preview.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with
 
-### `npm run eject`
+- React
+- SASS
+- CSS Grid
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### What I learned
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+TBD upon completion. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Continued development
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This application could be scaled up in many ways. 
+- employee login portal
+- populate patients from a secure database
+- add addition acuity factors such as Post-operation, hospice, drains, diabetic
+- add a feature for creating a staff members assignment. 
+  For example, you select an assignment for a specific type of staff memeber and the matrix will provide X amount of patients that do not exceed a maximum total acuity score. This would eliminate Charge Nurses having to write each staff members assignment equally every shift, something that can be time consuming and erroneous.
 
-## Learn More
+### API's
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+N/A
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
+- Website - [Alisar Fares-Boulos](https://www.alisarfaresboulos.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+TBD upon completion. 
