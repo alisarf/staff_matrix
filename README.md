@@ -26,7 +26,7 @@ TBD upon completion.
 ### Screenshot
 
 Dashboard Preview:
-![](./assets/preview.png)
+![](./images/preview.png)
 
 
 ## My process
