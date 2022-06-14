@@ -26,7 +26,7 @@ TBD upon completion.
 ### Screenshot
 
 Dashboard Preview:
-![](./images/preview.png)
+![](./images/matrix_preview.png)
 
 
 ## My process
