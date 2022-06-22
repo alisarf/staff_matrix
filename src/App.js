@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 //Import Content
 import units from "./units.json";
-import './css/style.css'
+import './css/style.css';
+import Header from './Header';
 
 //logo
 import logo from './images/matrix.svg';
@@ -210,30 +211,7 @@ function App() {
           </h2>
         </section>
 
-        <header className='Container__units'>
-          <div className='Flex Flex__row Flex__center'>
-            <img className= "Logo" src={logo} alt="molecule logo" />
-            <h1>Matrix</h1>
-          </div>
-            <nav>
-              <ul>
-              {
-                  Object.keys(unitDir).map((title)=>{
-                    return ( 
-                          <li>
-                            <button className='Flex' value={title} onClick={e => changeUnit(e.target.value)}>
-                              <img src={icon_arrow}/>
-                              {title.toUpperCase() } 
-                              {unitDir[title].unitName.toUpperCase()} 
-                            </button>
-                          </li>
-                      )
-                  })
-                }
-              </ul>
-            </nav>
-            <Button className='Button__logout'>Logout</Button>
-        </header>
+      <Header unitD={unitDir} changeU={changeUnit} />
 
         <main className='Container__patients'>
           <table className='PtTable'>
