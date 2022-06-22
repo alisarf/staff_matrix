@@ -85,9 +85,9 @@ function App() {
     });
   };
 
-  const getScoreScale = (type, score) => {
+  const getScoreScale = (caretype, value) => {
     //get corresponding scalescore
-    return parseInt(scoreScale[type][score]);
+    return parseInt(scoreScale[caretype][value]);
   };
 
   const setScoreValue = (score, id, careType) => {
@@ -102,25 +102,23 @@ function App() {
   };
 
   const getAcuity = () => {
-    //update individual acuity
+    //update total acuity
     var newAcuity = 0;
     data.forEach((item) => {
       newAcuity = newAcuity + item.acuity;
-      console.log(item.acuity + " acuity being added");
     });
-
-    //set toggle for first acuity set
 
     setTotal(newAcuity);
   };
 
   const updateIndAcuity = () => {
-    //update total acuity
+    //update ind acuity of all patients
     let careTypeArr = Object.keys(scoreScale);
     let updatedListAcuity = data.map((item) => {
       let total = 0;
 
       careTypeArr.forEach((careType) => {
+        //iterate through each caretype in a row
         let ref_score = getScoreScale(careType, item[careType]);
         total += ref_score;
       });
@@ -128,18 +126,18 @@ function App() {
     });
 
     setData(updatedListAcuity);
-    console.log(data);
   };
 
-  const updateSpecificAcuity = (item) => {
+  const updateSpecificAcuity = (patient) => {
+    //update ind acuity of one patient of refresh click
     let careTypeArr = Object.keys(scoreScale);
     let newArr = [...data];
     let total = 0;
     careTypeArr.forEach((careType) => {
-      let ref_score = getScoreScale(careType, item[careType]);
+      let ref_score = getScoreScale(careType, patient[careType]);
       total += ref_score;
     });
-    newArr[item.id] = { ...newArr[item.id], acuity: total };
+    newArr[patient.id] = { ...newArr[patient.id], acuity: total };
     console.log(newArr);
     setData(newArr);
   };
