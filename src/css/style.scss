@@ -5,151 +5,149 @@
 @import "utility/scrollbar";
 
 .Container {
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--grey-lightest);
-    border-radius: 30px;
-    grid-template-columns: 20vw 80vw;
-    grid-template-rows: 12vh 65vh 23vh;
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin: auto;
-        padding: 0 var(--row-pad);
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--grey-lightest);
+  border-radius: 30px;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 12vh 65vh 23vh;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 0 var(--row-pad);
+  }
+  &__units {
+    grid-row: 1/4;
+    grid-column: 1;
+    border-right: 3px solid rgba(229, 229, 229, 0.19);
+    background-color: var(--white);
+  }
+  &__patients {
+    grid-row: 2;
+    grid-column: 2;
+    overflow: scroll;
+    overflow-x: hidden;
+    table {
+      width: 90%;
+      border-spacing: 0 15px;
+      margin: 0 auto;
     }
-    &__units {
-        grid-row: 1/4;
-        grid-column: 1;
-        border-right: 3px solid rgba(229, 229, 229, 0.19);
-        background-color: var(--white);
+    tr:not(:first-child) {
+      //Skip Labels
+      background-color: var(--white);
     }
-    &__patients {
-        grid-row: 2;
-        grid-column: 2;
-        overflow: scroll;
-        overflow-x: hidden;
-        table {
-            width: 90%;
-            border-spacing: 0 15px;
-            margin: 0 auto;
-        }
-        tr:not(:first-child) {
-            //Skip Labels
-            background-color: var(--white);
-        }
-        th:first-child {
-            //Name Label
-            padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
-        }
-        td {
-            padding: var(--row-pad) 0;
-        }
-        td:first-child {
-            //Name Entry
-            padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
-        }
+    th:first-child {
+      //Name Label
+      padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
     }
-    &__lower {
-        grid-row: 3;
-        grid-column: 2;
+    td {
+      padding: var(--row-pad) 0;
     }
-    &__staff {
-        display: flex;
-        & > * {
-            flex: 1 1 0;
-        }
+    td:first-child {
+      //Name Entry
+      padding: var(--row-pad) 0 var(--row-pad) var(--row-pad);
     }
+  }
+  &__lower {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  &__staff {
+    display: flex;
+    & > * {
+      flex: 1 1 0;
+    }
+  }
 }
 .PtTable {
-    &__categories{
-        background-color: var(--lightblue);
-    }
+  &__categories {
+    background-color: var(--lightblue);
+  }
 }
 .Logo {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 time {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 2px;
-    color: #A4A4A4;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: #a4a4a4;
 }
 
 //buttons
 .Button {
-    &__refresh {
+  &__refresh {
     width: 25px;
     height: 25px;
     cursor: pointer;
     background-color: var(--light-purple);
     border-radius: 7px;
     border: none;
-    }
-    &:hover {
-        background-color: var(--dark-purple);
-        transform: scale(0.95);
-    }
-    &__logout {
-        position: absolute;
-        bottom: 10%;
-    }
+  }
+  &:hover {
+    background-color: var(--dark-purple);
+    transform: scale(0.95);
+  }
+  &__logout {
+    position: absolute;
+    bottom: 10%;
+  }
 }
-
 
 //helper classes
 .Flex {
-    display: flex;
-    &__row {
-        flex-direction: row;
-    }
-    &__col {
-        flex-direction: column;
-    }
-    &__center {
-        justify-content: center;
-    }
+  display: flex;
+  &__row {
+    flex-direction: row;
+  }
+  &__col {
+    flex-direction: column;
+  }
+  &__center {
+    justify-content: center;
+  }
 }
 .Block {
-    display: block;
+  display: block;
 }
 .Align {
-    &__right{
-        text-align: right;
-    }
-    &__left{
-        text-align: left;
-    }
-    &__center {
-        text-align: center;
-    }
+  &__right {
+    text-align: right;
+  }
+  &__left {
+    text-align: left;
+  }
+  &__center {
+    text-align: center;
+  }
 }
 .Capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .Rounded {
-    border-radius: var(--rounded);
+  border-radius: var(--rounded);
 }
 
 .Hidden {
-    display: none;
+  display: none;
 }
-
 
 //Rounded Border Rows
 tr td:first-of-type {
-    border-top-left-radius: var(--rounded);
-    border-bottom-left-radius: var(--rounded);
+  border-top-left-radius: var(--rounded);
+  border-bottom-left-radius: var(--rounded);
 }
 
 tr td:last-of-type {
-    border-top-right-radius: var(--rounded);
-    border-bottom-right-radius: var(--rounded);
+  border-top-right-radius: var(--rounded);
+  border-bottom-right-radius: var(--rounded);
 }

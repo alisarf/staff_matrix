@@ -1,44 +1,44 @@
 :root {
-    --font-primary : 'Roboto' , sans-serif;
-    --font-accent : 'Nunito', sans-serif;
+  --font-primary: "Roboto", sans-serif;
+  --font-accent: "Nunito", sans-serif;
 }
 
 .Font-bold-lrg {
-    color: var(--accent-1);
-    font-family: var(--font-accent);
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 27px;
-    text-align: right;
-    letter-spacing: 2px;
+  color: var(--accent-1);
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: right;
+  letter-spacing: 2px;
 }
 .Font-grey-med {
-    color: var(--grey-med);
-    font-family: var(--font-primary);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 2px;
+  color: var(--grey-med);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 2px;
 }
 
 .Font-grey-row {
-    font-family: var(--font-primary);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.5px;
-    color: var(--grey-dark);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: var(--grey-dark);
 }
 
 .Font-grey-categories {
-    font-family: var(--font-primary);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 15px;
-    letter-spacing: 0.5px;
-    color: var(--grey-light);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: var(--grey-light);
 }
 
 .Bold-lt {
-    font-weight: 500;
+  font-weight: 500;
 }

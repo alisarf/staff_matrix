@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Button = styled.button`
   border-radius: 50px;
@@ -8,10 +8,10 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 700;
   padding: 7px 60px;
-  background-color: ${({ bg }) => bg || '#7879F1'};
-  color: ${({ color }) => color || '#FFFFFF'};
+  background-color: ${({ bg }) => bg || "#7879F1"};
+  color: ${({ color }) => color || "#FFFFFF"};
   &:hover {
     opacity: 0.9;
     transform: scale(0.98);
   }
-`
+`;
