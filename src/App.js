@@ -1,13 +1,11 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect} from 'react'
 //Import Content
 import Header from './Header';
 import units from "./data/units.json";
 import "./css/style.css";
 
 //logo
-import logo from "./images/matrix.svg";
 import icon_refresh from "./images/refresh.svg";
-import icon_arrow from "./images/arrow.svg";
 
 //Styled-Components
 import { Button } from "./styled-components/button.styled";
@@ -30,10 +28,8 @@ function App() {
   const [unit, setUnit] = useState('bhu');
   const [data,setData]=useState([unitDir[unit].patients]);
   const [acuityTotal, setTotal] = useState(0);
-
   const [date, setDate] = useState({});
   const [timestamp, setTimestamp] = useState();
-
   const [staff, setStaff] = useState({
     provider: 2,
     nurse: 6,
@@ -78,6 +74,7 @@ function App() {
     },
   };
 
+  // function declarations
   const getStaff = () => {
     const roundUp = (divider) => Math.ceil(acuityTotal / divider);
     setStaff({
@@ -238,32 +235,7 @@ function App() {
             {/*could just use {unit}*/}
           </h2>
         </section>
-        <header className="Container__units">
-          <div className="Flex Flex__row Flex__center">
-            <img className="Logo" src={logo} alt="molecule logo" />
-            <h1>Matrix</h1>
-          </div>
-          <nav>
-            <ul>
-              {Object.keys(unitDir).map((title) => {
-                return (
-                  <li>
-                    <button
-                      className="Flex"
-                      value={title}
-                      onClick={(e) => changeUnit(e.target.value)}
-                    >
-                      <img src={icon_arrow} />
-                      {title.toUpperCase()}
-                      {unitDir[title].unitName.toUpperCase()}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-          <Button className="Button__logout">Logout</Button>
-        </header>
+        <Header unitD={unitDir} changeU={changeUnit} />
         <main className="Container__patients">
           <table className="PtTable">
             <tr className="PtTable__categories">
