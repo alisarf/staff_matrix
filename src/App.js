@@ -1,13 +1,13 @@
-import React,{useState,useEffect} from 'react';
-//Import Content
+import {useState,useEffect} from 'react';
+// Import Content
 import Header from './Header';
 import units from "./data/units.json";
 import "./css/style.css";
 
-//logo
+// logo
 import icon_refresh from "./images/refresh.svg";
 
-//Styled-Components
+// Styled-Components
 import { Button } from "./styled-components/button.styled";
 import { Card } from "./styled-components/card.styled";
 import { Select } from "./styled-components/select.styled";
@@ -56,7 +56,7 @@ function App() {
       no: 0,
     },
     alert: {
-      //all scoring below needs revising for real-life accuracy
+      // all scoring below needs revising for real-life accuracy
       1: 2,
       2: 2,
       3: 1,
@@ -87,14 +87,14 @@ function App() {
   };
 
   const getScoreScale = (type, score) => {
-    //get corresponding scalescore
+    // get corresponding scalescore
     return parseInt(scoreScale[type][score]);
   };
 
   const setScoreValue = (score, id, careType) => {
     // loop over the todos list and find the provided id.
-    let updatedList = data.map((item) => {
-      if (item.id == id) {
+    const updatedList = data.map((item) => {
+      if (item.id === id) {
         return { ...item, [careType]: score };
       }
       return item; // else return unmodified item
@@ -103,27 +103,27 @@ function App() {
   };
 
   const getAcuity = () => {
-    //update individual acuity
+    // update individual acuity
     var newAcuity = 0;
     data.forEach((item) => {
       newAcuity = newAcuity + item.acuity;
       console.log(item.acuity + " acuity being added");
     });
 
-    //set toggle for first acuity set
+    // set toggle for first acuity set
 
     setTotal(newAcuity);
   };
 
   const updateIndAcuity = () => {
-    //update total acuity
-    let careTypeArr = Object.keys(scoreScale);
-    let updatedListAcuity = data.map((item) => {
+    // update total acuity
+    const careTypeArr = Object.keys(scoreScale);
+    const updatedListAcuity = data.map((item) => {
       let total = 0;
 
       careTypeArr.forEach((careType) => {
-        let ref_score = getScoreScale(careType, item[careType]);
-        total += ref_score;
+        const refScore = getScoreScale(careType, item[careType]);
+        total += refScore;
       });
       return { ...item, acuity: total };
     });
@@ -133,28 +133,28 @@ function App() {
   };
 
   const updateSpecificAcuity = (item) => {
-    let careTypeArr = Object.keys(scoreScale);
-    let newArr = [...data];
+    const careTypeArr = Object.keys(scoreScale);
+    const newArr = [...data];
     let total = 0;
     careTypeArr.forEach((careType) => {
-      let ref_score = getScoreScale(careType, item[careType]);
-      total += ref_score;
+      const refScore = getScoreScale(careType, item[careType]);
+      total += refScore;
     });
     newArr[item.id] = { ...newArr[item.id], acuity: total };
     console.log(newArr);
     setData(newArr);
   };
 
-  const changeUnit = (target_unit) => {
-    //stop the units from pulling from json
-    if (target_unit !== unit) {
-      setUnit(target_unit);
-      setData(unitDir[target_unit].patients);
+  const changeUnit = (targetUnit) => {
+    // stop the units from pulling from json
+    if (targetUnit !== unit) {
+      setUnit(targetUnit);
+      setData(unitDir[targetUnit].patients);
     }
   };
 
   const getDate = () => {
-    let days = [
+    const days = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -163,7 +163,7 @@ function App() {
       "Friday",
       "Saturday",
     ];
-    let months = [
+    const months = [
       "January",
       "February",
       "March",
@@ -177,9 +177,9 @@ function App() {
       "November",
       "December",
     ];
-    let month = months[today.getMonth()];
-    let dd = String(today.getDate()).padStart(2, "0");
-    let yyyy = today.getFullYear();
+    const month = months[today.getMonth()];
+    const dd = String(today.getDate()).padStart(2, "0");
+    const yyyy = today.getFullYear();
 
     setDate({
       today: month + " " + dd + ", " + yyyy,
@@ -191,28 +191,28 @@ function App() {
   };
 
   useEffect(() => {
-    //when unit changes and intial render
-    updateIndAcuity(); //acuityInd
+    // when unit changes and intial render
+    updateIndAcuity(); // acuityInd
   }, [data[0].firstName]);
 
   useEffect(() => {
-    //initial and unit render
+    // initial and unit render
     getAcuity();
     getStaff();
   }, [data[0].acuity]);
 
   useEffect(() => {
     getStaff();
-    //if the staff button is clicked display the new value
-    //inital run present data  ->> watch for data change and count that increments
-  }, [acuityTotal]); //acuitytotal works but updates everytime the total changes, unit would be better
+    // if the staff button is clicked display the new value
+    // inital run present data  ->> watch for data change and count that increments
+  }, [acuityTotal]); // acuitytotal works but updates everytime the total changes, unit would be better
 
   useEffect(() => {
     updateIndAcuity();
     getAcuity();
   }, [unit]);
 
-  //set times
+  // set times
   useEffect(() => {
     getDate();
     getTimestamp();
@@ -232,7 +232,7 @@ function App() {
             <span className="Font-bold-lrg Capitalize">
               {unitDir[unit].unitName}
             </span>{" "}
-            {/*could just use {unit}*/}
+            {/* could just use {unit} */}
           </h2>
         </section>
         <Header unitD={unitDir} changeU={changeUnit} />
@@ -240,9 +240,9 @@ function App() {
           <table className="PtTable">
             <tr className="PtTable__categories">
               <th className="Align__left Font-grey-categories">Name</th>
-              {Object.keys(scoreScale).map((category) => {
+              {Object.keys(scoreScale).map((category, idx) => {
                 return (
-                  <th className="Align__left Font-grey-categories Capitalize">
+                  <th key={idx} className="Align__left Font-grey-categories Capitalize">
                     {category}
                   </th>
                 );
@@ -252,8 +252,8 @@ function App() {
             </tr>
             {data &&
               data.length > 0 &&
-              data.map((item) => (
-                <tr className="Rounded Font-grey-row">
+              data.map((item, idx) => (
+                <tr key={idx} className="Rounded Font-grey-row">
                   <td className="Capitalize Align__left">
                     {item.firstName} {item.lastName}
                   </td>
@@ -341,7 +341,7 @@ function App() {
                       className="Button__refresh"
                       onClick={() => {
                         updateSpecificAcuity(item);
-                        //getAcuity();
+                        // getAcuity();
                       }}
                     >
                       <img src={icon_refresh} alt="refresh" />
@@ -370,7 +370,7 @@ function App() {
           <section className="Container__staff">
             {Object.keys(staff).map((title, value) => {
               return (
-                <Card>
+                <Card key={value}>
                   <h4 title={value}>{title}</h4>
                   <h4 title={staff[title]}>{staff[title]}</h4>
                 </Card>

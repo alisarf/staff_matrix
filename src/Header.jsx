@@ -1,14 +1,15 @@
-//Import Content
+import PropTypes from 'prop-types';
+// Import Content
 import './css/style.css'
 
-//Styled-Components
+// Styled-Components
 import { Button } from './styled-components/button.styled';
 
-//logo
+// logo
 import logo from './images/matrix.svg';
 import icon_arrow from './images/arrow.svg';
 
-function Header(props){
+function Header({unitD, changeU}){
   return (
     <div className='Container__units'>
       <div className='Flex Flex__row Flex__center'>
@@ -18,13 +19,13 @@ function Header(props){
       <nav>
         <ul>
         {
-            Object.keys(props.unitD).map((title)=>{
+            Object.keys(unitD).map((title, idx)=>{
               return ( 
-                    <li>
-                      <button className='Flex' value={title} onClick={e => props.changeU(e.target.value)}>
+                    <li key={idx}>
+                      <button className='Flex' value={title} onClick={e => changeU(e.target.value)}>
                         <img src={icon_arrow}/>
                         {title.toUpperCase() } 
-                        {props.unitD[title].unitName.toUpperCase()} 
+                        {unitD[title].unitName.toUpperCase()} 
                       </button>
                     </li>
                 )
@@ -35,6 +36,11 @@ function Header(props){
       <Button className='Button__logout'>Logout</Button>
     </div>
   )
+}
+
+Header.propTypes = {
+  unitD: PropTypes.object,
+  changeU: PropTypes.func
 }
 
 export default Header;
