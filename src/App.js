@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect} from 'react';
 //Import Content
 import Header from './Header';
 import units from "./data/units.json";
