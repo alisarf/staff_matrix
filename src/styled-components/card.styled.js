@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Card = styled.div`
   border-radius: 10px;
@@ -8,10 +8,10 @@ export const Card = styled.div`
   font-size: 16px;
   font-weight: 700;
   padding: 5px 15px;
-  background-color: ${({ bg }) => bg || '#fff'};
-  color: ${({ color }) => color || '#333'};
+  background-color: ${({ bg }) => bg || "#fff"};
+  color: ${({ color }) => color || "#333"};
   &:hover {
     opacity: 0.9;
     transform: scale(0.98);
   }
-`
+`;
