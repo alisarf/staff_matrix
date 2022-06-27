@@ -151,6 +151,10 @@ function App() {
     }
   };
 
+  function test(){
+    console.log('something or other');
+  }
+
   const getDate = () => {
     const days = [
       "Sunday",
