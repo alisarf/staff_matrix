@@ -150,7 +150,11 @@ function App() {
       setData(unitDir[targetUnit].patients);
     }
   };
-// test test
+
+  function test(){
+    console.log('something or other');
+  }
+
   const getDate = () => {
     const days = [
       "Sunday",
