@@ -1,14 +1,15 @@
-import {useState,useEffect} from 'react';
+import { useState, useEffect } from 'react';
 // Import Content
-import Header from './Header';
-import Table from './Table';
+import Header from './components/Header';
+import Table from './components/Table';
+import Time from './components/Time';
 import units from "./data/units.json";
 import "./css/style.css";
 import { scoreScale } from './Objects';
 
 // Styled-Components
-import { Button } from "./styled-components/button.styled";
-import { Card } from "./styled-components/card.styled";
+import { Button } from "./components/styled-components/button.styled";
+import { Card } from "./components/styled-components/card.styled";
 
 /**
  *Ideas :
@@ -22,7 +23,7 @@ function App() {
   var unitDir = units.units;
   const today = new Date();
 
-  // hook declarations
+  // useState hook declarations
   const [unit, setUnit] = useState('bhu');
   const [data, setData] = useState([unitDir[unit].patients]);
   const [acuityTotal, setTotal] = useState(0);
@@ -146,10 +147,12 @@ function App() {
       dayOfWeek: days[today.getDay()],
     });
   };
+  
   const getTimestamp = () => {
     setTimestamp(today.toLocaleString());
   };
 
+  // useEffect hook declarations
   useEffect(() => {
     // when unit changes and intial render
     updateIndAcuity(); // acuityInd
@@ -183,10 +186,7 @@ function App() {
     <div className="App">
       <div className="Container">
         <section className="Container__header">
-          <time className="Flex Flex__col Flex__center Align__left Font-grey-med Container__header--date">
-            <span className="Bold-lt">{date.dayOfWeek}</span>
-            <span>{date.today}</span>
-          </time>
+          <Time loc="top" date={date} timestamp={timestamp}/>
           <h2 className="Flex Flex__col Flex__center Align__right Font-grey-med">
             <span className="Font-grey-med Capitalize">Hospital XYZ</span>
             <span className="Font-bold-lrg Capitalize">
@@ -212,7 +212,7 @@ function App() {
           </Button>
           {acuityTotal}
           <p>
-            Last Updated: <time>{timestamp}</time>
+            Last Updated: <Time loc="bottom" timestamp={timestamp}/>
           </p>
           <div className="Hidden">{acuityTotal}</div>
           <section className="Container__staff">
