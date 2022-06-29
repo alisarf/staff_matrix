@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 // Import Content
-import './css/style.css'
+import '../css/style.css'
 
 // Styled-Components
 import { Button } from './styled-components/button.styled';
 
 // logo
-import logo from './images/matrix.svg';
-import icon_arrow from './images/arrow.svg';
+import logo from '../images/matrix.svg';
+import icon_arrow from '../images/arrow.svg';
 
 function Header({unitD, changeU}){
   return (
@@ -19,7 +19,7 @@ function Header({unitD, changeU}){
       <nav>
         <ul>
         {
-            Object.keys(unitD).map((title, idx)=>{
+            Object.keys(unitD).map((title, idx) => {
               return ( 
                     <li key={idx}>
                       <button className='Flex' value={title} onClick={e => changeU(e.target.value)}>
