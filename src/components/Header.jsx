@@ -11,10 +11,10 @@ import icon_arrow from '../images/arrow.svg';
 
 function Header({unitD, changeU}){
   return (
-    <div className='Container__units'>
-      <div className='Flex Flex__row Flex__center'>
-        <img className= "Logo" src={logo} alt="molecule logo" />
-        <h1>Matrix</h1>
+    <div className='Container__units Flex Flex_col'>
+      <div className='Logo Flex Flex__row Flex__center'>
+        <img className= "Logo__img" src={logo} alt="molecule logo" />
+        <h1 className='Logo__title'>Matrix</h1>
       </div>
       <nav>
         <ul>
@@ -33,7 +33,7 @@ function Header({unitD, changeU}){
           }
         </ul>
       </nav>
-      <Button className='Button__logout'>Logout</Button>
+      <Button className='Button__logout'>LOG OUT</Button>
     </div>
   )
 }
