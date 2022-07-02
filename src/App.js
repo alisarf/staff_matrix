@@ -9,7 +9,7 @@ import { scoreScale } from "./Objects";
 
 // Styled-Components
 import { Button } from "./components/styled-components/button.styled";
-import { Card } from "./components/styled-components/card.styled";
+import StaffCards from "./components/StaffCards";
 
 /**
  *Ideas :
@@ -214,21 +214,11 @@ function App() {
           >
             Get Staff
           </Button>
-          {acuityTotal}
-          <p>
-            Last Updated: <Time loc="bottom" timestamp={timestamp} />
-          </p>
-          <div className="Hidden">{acuityTotal}</div>
-          <section className="Container__staff">
-            {Object.keys(staff).map((title, value) => {
-              return (
-                <Card key={value}>
-                  <h4 title={value}>{title}</h4>
-                  <h4 title={staff[title]}>{staff[title]}</h4>
-                </Card>
-              );
-            })}
-          </section>
+          <span>
+            Last Updated:
+            <Time loc="bottom" timestamp={timestamp} />
+          </span>
+          <StaffCards staff={staff}></StaffCards>
         </section>
       </div>
     </div>
