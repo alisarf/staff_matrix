@@ -200,16 +200,6 @@ function App() {
           <Table data={data} setScoreValue={setScoreValue} updateSpecificAcuity={updateSpecificAcuity}/>
         </main>
         <section className="Container__lower">
-          <Button
-            onClick={() => {
-              updateIndAcuity();
-              getAcuity();
-              getStaff();
-              getTimestamp();
-            }}
-          >
-            Get Staff
-          </Button>
           {acuityTotal}
           <p>
             Last Updated: <Time loc="bottom" timestamp={timestamp}/>
@@ -224,6 +214,16 @@ function App() {
                 </Card>
               );
             })}
+            <Button
+              onClick={() => {
+                updateIndAcuity();
+                getAcuity();
+                getStaff();
+                getTimestamp();
+              }}
+            >
+              Get Staff
+            </Button>
           </section>
         </section>
       </div>

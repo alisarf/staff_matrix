@@ -8,6 +8,11 @@ body {
   font-family: var(--font-primary);
 }
 
+hr {
+  width: 80%;
+  color: var(--grey-lightest);
+}
+
 .Container {
   display: grid;
   height: 100vh;
@@ -88,13 +93,16 @@ body {
   }
 }
 .Logo {
+  margin-top: 2em;
+
   &__img {
     width: 3.5rem;
+    margin-right: 0.4rem;
   }
 
   &__title {
     font-family: var(--font-accent);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     align-self: center;
