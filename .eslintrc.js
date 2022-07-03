@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "standard", "prettier"],
+  extends: [
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "standard",
+    "prettier",
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -12,5 +17,25 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", "internal"],
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
+  },
 };

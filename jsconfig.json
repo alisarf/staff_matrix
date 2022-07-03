@@ -1,0 +1,14 @@
+//Not found......
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/shared/components/*"],
+      "@hooks/*": ["src/shared/hooks/*"],
+      "@stylesBase/*": ["src/styles/base/*"],
+      "@stylesMixins/*": ["src/styles/mixins/*"],
+      "@stylesUtils/*": ["src/styles/utils/*"]
+    }
+  }
+}
