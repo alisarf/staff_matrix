@@ -1,13 +1,13 @@
 :root {
-  --white: #FFFFFF;
-  --light-purple: #A5A6F6;
-  --dark-purple: #7879F1;
-  --grey-lightest: #F9F9F9 ;
-  --grey-light:#C0C0C0;
-  --grey-scroll: #EBEBEB;
-  --grey-med: #A4A4A4;
-  --grey-dark:#676767;
-  --accent-1: #FF906D;
+  --white: #ffffff;
+  --light-purple: #a5a6f6;
+  --dark-purple: #7879f1;
+  --grey-lightest: #f9f9f9;
+  --grey-light: #c0c0c0;
+  --grey-scroll: #ebebeb;
+  --grey-med: #a4a4a4;
+  --grey-dark: #676767;
+  --accent-1: #ff906d;
 }
 
 /* Box sizing rules */
@@ -33,8 +33,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -94,8 +94,8 @@ select {
 }
 
 :root {
-  --font-primary: 'Roboto' , sans-serif;
-  --font-accent: 'Nunito', sans-serif;
+  --font-primary: "Roboto", sans-serif;
+  --font-accent: "Nunito", sans-serif;
 }
 
 .Font-bold-lrg {
@@ -146,8 +146,8 @@ select {
 
 /* Track */
 .Container__patients::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 5px #EBEBEB;
-          box-shadow: inset 0 0 5px #EBEBEB;
+  -webkit-box-shadow: inset 0 0 5px #ebebeb;
+          box-shadow: inset 0 0 5px #ebebeb;
 }
 
 /* Handle */
@@ -155,6 +155,15 @@ select {
   background: var(--grey-scroll);
   height: 20px;
   border-radius: 10px;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+hr {
+  width: 80%;
+  color: var(--grey-lightest);
 }
 
 .Container {
@@ -190,6 +199,22 @@ select {
   grid-column: 1;
   border-right: 3px solid rgba(229, 229, 229, 0.19);
   background-color: var(--white);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container nav ul {
+  list-style: none;
+}
+
+.Container nav button {
+  background: none;
+  border: none;
 }
 
 .Container__patients {
@@ -247,18 +272,32 @@ select {
 }
 
 .Logo {
-  width: 50px;
-  height: 50px;
+  margin-top: 2em;
+}
+
+.Logo__img {
+  width: 3.5rem;
+  margin-right: 0.4rem;
+}
+
+.Logo__title {
+  font-family: var(--font-accent);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 time {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 2px;
-  color: #A4A4A4;
+  color: #a4a4a4;
 }
 
 .Button__refresh {
@@ -344,4 +383,3 @@ tr td:last-of-type {
   border-top-right-radius: var(--rounded);
   border-bottom-right-radius: var(--rounded);
 }
-/*# sourceMappingURL=style.css.map */
