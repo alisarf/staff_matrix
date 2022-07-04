@@ -16,6 +16,7 @@ function Header({ unitD, changeU }) {
         <img className="Logo" src={logo} alt="molecule logo" />
         <h1>Matrix</h1>
       </div>
+      <hr></hr>
       <nav>
         <ul>
           {Object.keys(unitD).map((title, idx) => {
