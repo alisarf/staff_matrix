@@ -1,22 +1,25 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // Import Content
-import '../css/style.css'; 
-import { scoreScale } from '../Objects';
+import "../css/style.css";
+import { scoreScale } from "../Objects";
 
 // logo
-import icon_refresh from "../images/refresh.svg";
+import iconRefresh from "../images/refresh.svg";
 
 // Styled-Components
 import { Select } from "./styled-components/select.styled";
 
-function Table({data, setScoreValue, updateSpecificAcuity}){
+function Table({ data, setScoreValue, updateSpecificAcuity }) {
   return (
     <table className="PtTable">
       <tr className="PtTable__categories">
         <th className="Align__left Font-grey-categories">Name</th>
         {Object.keys(scoreScale).map((category, idx) => {
           return (
-            <th key={idx} className="Align__left Font-grey-categories Capitalize">
+            <th
+              key={idx}
+              className="Align__left Font-grey-categories Capitalize"
+            >
               {category}
             </th>
           );
@@ -118,20 +121,19 @@ function Table({data, setScoreValue, updateSpecificAcuity}){
                   // getAcuity();
                 }}
               >
-                <img src={icon_refresh} alt="refresh" />
+                <img src={iconRefresh} alt="refresh" />
               </button>
             </td>
           </tr>
         ))}
-    </table>  
-  )
+    </table>
+  );
 }
 
 Table.propTypes = {
   data: PropTypes.array,
   setScoreValue: PropTypes.func,
-  updateSpecificAcuity: PropTypes.func
-}
+  updateSpecificAcuity: PropTypes.func,
+};
 
 export default Table;
-

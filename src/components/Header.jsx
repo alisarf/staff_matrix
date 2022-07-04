@@ -1,49 +1,49 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // Import Content
-import '../css/style.css'
+import "../css/style.css";
 
 // Styled-Components
-import { Button } from './styled-components/button.styled';
+import { Button } from "./styled-components/button.styled";
 
 // logo
-import logo from '../images/matrix.svg';
-import icon_arrow from '../images/arrow.svg';
+import logo from "../images/matrix.svg";
+import iconArrow from "../images/arrow.svg";
 
-function Header({unitD, changeU}){
+function Header({ unitD, changeU }) {
   return (
-    <div className='Container__units Flex Flex_col'>
-      <div className='Logo Flex Flex__row Flex__center'>
-        <img className= "Logo__img" src={logo} alt="molecule logo" />
-        <h1 className='Logo__title'>Matrix</h1>
+    <div className="Container__units">
+      <div className="Flex Flex__row Flex__center">
+        <img className="Logo" src={logo} alt="molecule logo" />
+        <h1>Matrix</h1>
       </div>
       <hr></hr>
       <nav>
         <ul>
-          <h2>My Units</h2>
-        {
-            Object.keys(unitD).map((title, idx) => {
-              return ( 
-                    <li key={idx}>
-                      <button className='Flex' value={title} onClick={e => changeU(e.target.value)}>
-                        <img src={icon_arrow}/>
-                        {title.toUpperCase() } 
-                        {unitD[title].unitName.toUpperCase()} 
-                      </button>
-                    </li>
-                )
-            })
-          }
+          {Object.keys(unitD).map((title, idx) => {
+            return (
+              <li key={idx}>
+                <button
+                  className="Flex"
+                  value={title}
+                  onClick={(e) => changeU(e.target.value)}
+                >
+                  <img src={iconArrow} />
+                  {title.toUpperCase()}
+                  {unitD[title].unitName.toUpperCase()}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </nav>
-      <Button className='Button__logout'>LOG OUT</Button>
+      <Button className="Button__logout">Logout</Button>
     </div>
-  )
+  );
 }
 
 Header.propTypes = {
   unitD: PropTypes.object,
-  changeU: PropTypes.func
-}
+  changeU: PropTypes.func,
+};
 
 export default Header;
-

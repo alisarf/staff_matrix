@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 // Import Content
-import Header from './components/Header';
-import Table from './components/Table';
-import Time from './components/Time';
+import Header from "./components/Header";
+import Table from "./components/Table";
+import Time from "./components/Time";
 import units from "./data/units.json";
 import "./css/style.css";
-import { scoreScale } from './Objects';
+import { scoreScale } from "./Objects";
 
 // Styled-Components
 import { Button } from "./components/styled-components/button.styled";
-import { Card } from "./components/styled-components/card.styled";
+import StaffCards from "./components/StaffCards";
 
 /**
  *Ideas :
@@ -24,7 +24,7 @@ function App() {
   const today = new Date();
 
   // useState hook declarations
-  const [unit, setUnit] = useState('bhu');
+  const [unit, setUnit] = useState("bhu");
   const [data, setData] = useState([unitDir[unit].patients]);
   const [acuityTotal, setTotal] = useState(0);
   const [date, setDate] = useState({});
@@ -83,8 +83,8 @@ function App() {
 
       careTypeArr.forEach((careType) => {
         // iterate through each caretype in a row
-        const ref_score = getScoreScale(careType, item[careType]);
-        total += ref_score;
+        const refScore = getScoreScale(careType, item[careType]);
+        total += refScore;
       });
       return { ...item, acuity: total };
     });
@@ -98,8 +98,8 @@ function App() {
     const newArr = [...data];
     let total = 0;
     careTypeArr.forEach((careType) => {
-      const ref_score = getScoreScale(careType, patient[careType]);
-      total += ref_score;
+      const refScore = getScoreScale(careType, patient[careType]);
+      total += refScore;
     });
     newArr[patient.id] = { ...newArr[patient.id], acuity: total };
     console.log(newArr);
@@ -147,7 +147,7 @@ function App() {
       dayOfWeek: days[today.getDay()],
     });
   };
-  
+
   const getTimestamp = () => {
     setTimestamp(today.toLocaleString());
   };
@@ -186,7 +186,7 @@ function App() {
     <div className="App">
       <div className="Container">
         <section className="Container__header">
-          <Time loc="top" date={date} timestamp={timestamp}/>
+          <Time loc="top" date={date} timestamp={timestamp} />
           <h2 className="Flex Flex__col Flex__center Align__right Font-grey-med">
             <span className="Font-grey-med Capitalize">Hospital XYZ</span>
             <span className="Font-bold-lrg Capitalize">
@@ -197,34 +197,28 @@ function App() {
         </section>
         <Header unitD={unitDir} changeU={changeUnit} />
         <main className="Container__patients">
-          <Table data={data} setScoreValue={setScoreValue} updateSpecificAcuity={updateSpecificAcuity}/>
+          <Table
+            data={data}
+            setScoreValue={setScoreValue}
+            updateSpecificAcuity={updateSpecificAcuity}
+          />
         </main>
         <section className="Container__lower">
-          {acuityTotal}
-          <p>
-            Last Updated: <Time loc="bottom" timestamp={timestamp}/>
-          </p>
-          <div className="Hidden">{acuityTotal}</div>
-          <section className="Container__staff">
-            {Object.keys(staff).map((title, value) => {
-              return (
-                <Card key={value}>
-                  <h4 title={value}>{title}</h4>
-                  <h4 title={staff[title]}>{staff[title]}</h4>
-                </Card>
-              );
-            })}
-            <Button
-              onClick={() => {
-                updateIndAcuity();
-                getAcuity();
-                getStaff();
-                getTimestamp();
-              }}
-            >
-              Get Staff
-            </Button>
-          </section>
+          <Button
+            onClick={() => {
+              updateIndAcuity();
+              getAcuity();
+              getStaff();
+              getTimestamp();
+            }}
+          >
+            Get Staff
+          </Button>
+          <span>
+            Last Updated:
+            <Time loc="bottom" timestamp={timestamp} />
+          </span>
+          <StaffCards staff={staff}></StaffCards>
         </section>
       </div>
     </div>
